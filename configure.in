@@ -290,6 +290,7 @@ if test ["x$enable_]patsubst([$1], -, _)["] = xyes; then
 fi])
 
 ELEMENTS_ARG_ENABLE(analysis, [include elements for network analysis], yes)
+ELEMENTS_ARG_ENABLE(aodv, [include AODV elements], no)
 ELEMENTS_ARG_ENABLE(app, [include application-level elements], yes)
 ELEMENTS_ARG_ENABLE(aqm, [include active queue management elements], yes)
 ELEMENTS_ARG_ENABLE(ethernet, [include Ethernet elements], yes)
@@ -1431,6 +1432,11 @@ case "$target_cpu" in
     i486|i586) provisions="$provisions i386";;
     i686|i786) provisions="$provisions i386 i586";;
 esac
+
+dnl add 'aodv' if AODV elements are available
+if test "x$enable_aodv" = xyes; then
+    provisions="$provisions aodv"
+fi
 
 dnl add 'analysis' if analysis elements are available
 if test "x$enable_analysis" = xyes; then
