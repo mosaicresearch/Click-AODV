@@ -3,3 +3,9 @@ Errors to fix
 
 precursors are added for destination instead of source
 some of this could clearly use memory debugging, valgrind is your friend
+
+To do
+-----
+
+clean warnings: remove the use of gettimeofday
+replace the use of cp_va_parse by cp_va_kparse
