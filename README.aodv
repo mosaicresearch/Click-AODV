@@ -1,0 +1,5 @@
+Errors to fix
+--------------
+
+precursors are added for destination instead of source
+some of this could clearly use memory debugging, valgrind is your friend

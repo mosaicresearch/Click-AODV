@@ -1,0 +1,10 @@
+aodv_nsclick_streams_?0.tcl
+aodv_nsclick_streams_*5.tcl
+aodv_uu_streams_?0.tcl
+aodv_uu_streams_*5.tcl
+aodv.click
+aodv.nam
+aodv.tr
+aodv_uu.tr
+*.dump
+

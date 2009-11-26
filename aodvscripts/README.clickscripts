@@ -1,0 +1,71 @@
+analyse			analysis scripts directory
+	all_M2M_delay.pl	try to determine all end to end delays in a trace
+	get_M2M_delay.pl	determine the end to end delay of 1 stream in a trace
+	get_delivery.pl		get delivery statistics
+	get_overhead.pl		determine overhead
+
+aodv.click	basic AODV configuration (without jitter)
+aodv.clickmetlabels	aodv.click with labels for CheckIPHeader
+aodv_jittered.click	aodv.click with 50 ms jitter
+aodv_jittered_200.click		aodv.click with 200 ms jitter
+aodv_jittered_500.click		aodv.click with 500 ms jitter
+aodv_nsclick.tcl		trivial scenario
+aodv_nsclick_jitter_200.tcl	trivial scenario with 200 ms jitter
+aodv_nsclick_jitter_50.tcl	trivial scenario with 50 ms jitter
+aodv_nsclick_jitter_500.tcl	trivial scenario with 500 ms jitter
+aodv_nsclick_random.tcl		random movement scenario
+aodv_nsclick_randomrandomstart.tcl	random movement scenario with random start
+aodv_nsclick_randomstart.tcl	trivial scenario with random start
+aodv_nsclick_rerouting.tcl	topology change reaction scenario
+aodv_nsclick_unreachable.tcl	scenario with unreachable nodes (for RREQ generation scheduling tests)
+aodv_userlevel.click		userlevel AODV configuration
+aodv_uu.tcl			trivial scenario (for AODV-UU)
+aodv_uu_random.tcl		random scenario (for AODV-UU)
+aodv_uu_randomstart.tcl		random scenario with random start (for AODV-UU)
+aodv_uu_rerouting.tcl		topology change reaction scenario (for AODV-UU)
+aodv_uu_unreachable.tcl		scenario with unreachable nodes (for AODV-UU)
+duration		duration cost measurement scenarios
+	aodv.click	symlink to trivial click script
+	aodv_nsclick_time.tcl	basic script (without time)
+	aodv_nsclick_time_50.tcl	generated script (50 seconds)
+	...
+	aodv_nsclick_time_500.tcl	generated script (500 seconds)
+	aodv_uu_time.tcl	basic script (without time, AODV-UU)
+	aodv_uu_time_50.tcl	generated script (50 seconds, AODV-UU)
+	...
+	aodv_uu_time_500.tcl	generated script (500 seconds, AODV-UU)
+	timeduration.sh		script to run measurements
+
+nrofnodes		number of nodes cost measurement scenarios
+	aodv.click	symlink to trivial click script
+	aodv_nsclick_many_10.tcl	generated script (10 nodes)
+	...
+	aodv_nsclick_many_100.tcl	generated script (100 nodes)
+	aodv_nsclick_many_begin.tcl	basic script (without nodes)
+	aodv_nsclick_many_end.tcl	basic script (without nodes)
+	aodv_uu_many_10.tcl	generated script (10 nodes, AODV-UU)
+	...
+	aodv_uu_many_100.tcl	generated script (100 nodes, AODV-UU)
+	aodv_uu_many_begin.tcl	basic script (without nodes, AODV-UU)
+	aodv_uu_many_end.tcl	basic script (without nodes, AODV-UU)
+	generatenrnodes.rb	Ruby script to generate fixed topology nodes
+	random.sh		script to run measurements
+
+nrofstreams		number of stream cost measurement scenarios
+	aodv.click	symlink to trivial click script
+	aodv_nsclick_streams_5.tcl	generated script (5 streams)
+	aodv_nsclick_streams_25.tcl	generated script (25 streams)
+	aodv_nsclick_streams_begin.tcl		basic script (without streams)
+	aodv_nsclick_streams_end.tcl		basic script (without streams)
+	aodv_uu_streams_5.tcl	generated script (5 streams, AODV-UU)
+	aodv_uu_streams_25.tcl	generated script (25 streams, AODV-UU)
+	aodv_uu_streams_begin.tcl		basic script (without streams, AODV-UU)
+	aodv_uu_streams_end.tcl		basic script (without streams, AODV-UU)
+	generate.sh		script to run measurements
+	generatenrstreams.rb	Ruby script to generate multiple streams
+
+ping_userlevel.click		userlevel Clickscript supporting ICMP ping
+randommovement		number of randomly moving nodes cost measurement scenarios
+	aodv_nsclick_random.tcl		basic script (without nodecount)
+	random.sh		script to run measurements
+

@@ -1,0 +1,5 @@
+*.dump
+aodv.tr
+aodv_nsclick_time_*
+aodv_uu.tr
+aodv_uu_time_*
