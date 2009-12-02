@@ -6,7 +6,7 @@
 
 /*
  * =c
- * AODVDestinationClassifier()
+ * AODVDestinationClassifier(NEIGHBOURS)
  * =s AODV
  * =a AODVNeighbours
  * =d

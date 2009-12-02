@@ -25,8 +25,9 @@ AODVNeighbours::~AODVNeighbours()
 int
 AODVNeighbours::configure(Vector<String> &conf, ErrorHandler *errh)
 {
-	int res = cp_va_parse(conf, this, errh, cpIPAddress, "my IPAddress", &myIP, 0);
-	return res;
+    return cp_va_kparse(conf, this, errh,
+			"ADDR", cpkP+cpkM, cpIPAddress, &myIP,
+			cpEnd);
 }
 
 void AODVNeighbours::setRouteUpdateWatcher(AODVRouteUpdateWatcher* w){

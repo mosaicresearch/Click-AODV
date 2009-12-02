@@ -6,7 +6,7 @@
 
 /*
  * =c
- * AODVHelloGenerator(IP)
+ * AODVHelloGenerator(NEIGHBOURS)
  * =s AODV
  * =a AODVNeighbours, AODVUpdateNeighbours
  * =d

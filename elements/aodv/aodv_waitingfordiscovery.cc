@@ -27,18 +27,10 @@ AODVWaitingForDiscovery::~AODVWaitingForDiscovery()
 int
 AODVWaitingForDiscovery::configure(Vector<String> &conf, ErrorHandler *errh)
 {
-	Element* generate_rreq_element;
-	Element* neighbour_table_element;
-	int res = cp_va_parse(conf, this, errh, cpElement, "AODVGenerateRREQ", &generate_rreq_element,
-		cpElement, "AODVNeighbour table", &neighbour_table_element, 0);
-	if(res < 0) return res;
-	if (!(rreq=(AODVGenerateRREQ*)generate_rreq_element->cast("AODVGenerateRREQ"))){
-		return errh->error("Supplied element is not a valid AODVGenerateRREQ element (cast failed)");
-	}
-	if (!(neighbour_table=(AODVNeighbours*)neighbour_table_element->cast("AODVNeighbours"))){
-		return errh->error("Supplied element is not a valid AODVNeighbours element (cast failed)");
-	}
-	return 0;
+    return cp_va_kparse(conf, this, errh,
+		"GENERATERREQ", cpkP+cpkM, cpElementCast, "AODVGenerateRREQ", &rreq,
+		"NEIGHBOURS", cpkP+cpkM, cpElementCast, "AODVNeighbours", &neighbour_table,
+		cpEnd);
 }
 
 void AODVWaitingForDiscovery::runTask(const IPAddress & destination, TimerData* data){

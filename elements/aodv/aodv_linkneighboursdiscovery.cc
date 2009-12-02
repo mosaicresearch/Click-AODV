@@ -24,18 +24,10 @@ AODVLinkNeighboursDiscovery::~AODVLinkNeighboursDiscovery()
 int
 AODVLinkNeighboursDiscovery::configure(Vector<String> &conf, ErrorHandler *errh)
 {
-	Element * neighbour_table_element;
-	Element * discovery_element;
-	int res = cp_va_parse(conf, this, errh, cpElement, "AODVNeighbour table", &neighbour_table_element,
-	cpElement, "AODVWaitingForDiscovery", &discovery_element, 0);
-	if(res < 0) return res;
-	if (!(neighbour_table=(AODVNeighbours*)neighbour_table_element->cast("AODVNeighbours"))){
-		return errh->error("Supplied element is not a valid AODVNeighbours element (cast failed)");
-	}
-	if (!(discovery=(AODVWaitingForDiscovery*)discovery_element->cast("AODVWaitingForDiscovery"))){
-		return errh->error("Supplied element is not a valid AODVWaitingForDiscovery element (cast failed)");
-	}
-	return 0;
+	return cp_va_kparse(conf, this, errh,
+		"NEIGHBOURS", cpkP+cpkM, cpElementCast, "AODVNeighbours", &neighbour_table,
+		"DISCOVERY", cpkP+cpkM, cpElementCast, "AODVWaitingForDiscovery", &discovery,
+		cpEnd);
 }
 
 int AODVLinkNeighboursDiscovery::initialize(ErrorHandler *)

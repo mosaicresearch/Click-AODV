@@ -25,20 +25,12 @@ AODVTrackNeighbours::~AODVTrackNeighbours()
 int
 AODVTrackNeighbours::configure(Vector<String> &conf, ErrorHandler *errh)
 {
-	Element* generateRerrElement;
-	Element* neighbour_table_element;
-	int res = cp_va_parse(conf, this, errh,
-		cpElement, "AODVGenerateRERR", &generateRerrElement,
-		cpElement, "AODVNeighbours", &neighbour_table_element, 0);
+	int res = cp_va_kparse(conf, this, errh,
+		"GENERATERERR", cpkP+cpkM, cpElementCast, "AODVGenerateRERR", &generateRerr,
+		"NEIGHBOURS", cpkP+cpkM, cpElementCast, "AODVNeighbours", &neighbour_table,
+		cpEnd);
 	if(res < 0) return res;
-	if (!(generateRerr=(AODVGenerateRERR*)generateRerrElement->cast("AODVGenerateRERR"))){
-		return errh->error("Supplied element is not a valid AODVGenerateRERR element (cast failed)");
-	}
-	if (!(neighbour_table=(AODVNeighbours*)neighbour_table_element->cast("AODVNeighbours"))){
-		return errh->error("Supplied element is not a valid AODVNeighbours element (cast failed)");
-	}
 	myIP = &neighbour_table->getMyIP();
-	
 	return res;
 }
 

@@ -8,7 +8,7 @@
 
 /*
  * =c
- * AODVNeighbours()
+ * AODVNeighbours(ADDR)
  * =s AODV
  * =a AODVRouteUpdateWatcher
  * 

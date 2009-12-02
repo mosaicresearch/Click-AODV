@@ -6,7 +6,7 @@
 
 /*
  * =c
- * AODVGenerateRREQ(AODVNeighbours,AODVKnownClassifier)
+ * AODVGenerateRREQ(NEIGHBOURS, KNOWNCLASSIFIER)
  * =s AODV
  * =a AODVNeighbours, AODVKnownClassifier
  * =d

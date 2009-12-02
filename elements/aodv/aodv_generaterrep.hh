@@ -6,7 +6,7 @@
 
 /*
  * =c
- * AODVGenerateRREP()
+ * AODVGenerateRREP(NEIGHBOURS, SETRREP)
  * =s AODV
  * =a AODVNeighbours
  * =d

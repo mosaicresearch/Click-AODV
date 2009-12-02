@@ -5,7 +5,7 @@
 
 /*
  * =c
- * AODVLookUpRoute()
+ * AODVLookUpRoute(NEIGHBOURS)
  * =s AODV
  * =a AODVNeighbours
  * =d

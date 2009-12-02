@@ -7,7 +7,7 @@
 
 /*
  * =c
- * AODVKnownClassifier()
+ * AODVKnownClassifier(NEIGHBOURS)
  * =s AODV
  * =a AODVNeighbours
  * =d

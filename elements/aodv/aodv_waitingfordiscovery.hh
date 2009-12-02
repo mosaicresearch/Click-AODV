@@ -9,7 +9,7 @@
 
 /*
  * =c
- * AODVWaitingForDiscovery()
+ * AODVWaitingForDiscovery(GENERATERREQ, NEIGHBOURS)
  * =s AODV
  * =a AODVGenerateRREQ, AODVNeighbours
  * =d

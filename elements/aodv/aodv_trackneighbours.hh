@@ -7,7 +7,7 @@
 
 /*
  * =c
- * AODVTrackNeighbours()
+ * AODVTrackNeighbours(GENERATERERR)
  * =s AODV
  * =a AODVNeighbours, AODVGenerateRERR
  * =d

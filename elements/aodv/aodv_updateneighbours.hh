@@ -5,7 +5,7 @@
 
 /*
  * =c
- * AODVUpdateNeighbours()
+ * AODVUpdateNeighbours(NEIGHBOURS)
  * =s AODV
  * =a AODVNeighbours
  * =d

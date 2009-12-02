@@ -37,15 +37,11 @@ AODVHelloGenerator::initialize(ErrorHandler *)
 int
 AODVHelloGenerator::configure(Vector<String> &conf, ErrorHandler *errh)
 {
-	Element * neighbour_table_element;
-	int res = cp_va_parse(conf, this, errh, cpElement, "AODVNeighbour table", &neighbour_table_element, 0);
+	int res = cp_va_kparse(conf, this, errh,
+		"NEIGHBOURS", cpkP+cpkM, cpElementCast, "AODVNeighbours", &neighbour_table,
+		cpEnd);
 	if(res < 0) return res;
-	if (!(neighbour_table=(AODVNeighbours*)neighbour_table_element->cast("AODVNeighbours"))){
-		return errh->error("Supplied element is not a valid AODVNeighbours element (cast failed)");
-	}
-	
 	myIP = &neighbour_table->getMyIP();
-
 	return 0;
 }
 

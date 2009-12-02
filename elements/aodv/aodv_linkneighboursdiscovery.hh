@@ -6,7 +6,7 @@
 
 /* 
  * =c
- * AODVLinkNeighboursDiscovry(AODVNeighbours,AODVWaitingForDiscovery)
+ * AODVLinkNeighboursDiscovry(NEIGHBOURS, DISCOVERY)
  * =s AODV
  * =a AODVNeighbours, AODVWaitingForDiscovery
  * =d
