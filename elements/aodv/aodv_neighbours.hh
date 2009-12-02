@@ -83,7 +83,10 @@ class AODVNeighbours : public Element {
 		// some usefull time functions, for general usage
 		static int calculateLifetime(int lifetime);
 		static void updateLifetime(NeighbourMap::Pair* pair);
-		static timeval calculateTimeval(int ms);
+
+		static inline Timestamp calculateTimeval(int ms) {
+			return Timestamp::now() + Timestamp::make_msec(ms);
+		}
 };
 
 CLICK_ENDDECLS

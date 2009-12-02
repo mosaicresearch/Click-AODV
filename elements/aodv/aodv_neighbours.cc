@@ -139,14 +139,14 @@ void AODVNeighbours::addLifeTime(const IPAddress & destination, uint32_t ms){
 	assert(ms > 0);
 	NeighbourMap::Pair* pair = neighbours.find_pair(destination);
 	if (!pair) return; // route didn't exist / already expunged
-	const struct timeval & newer = calculateTimeval(ms);
-	const struct timeval & old = pair->value.expiry->expiry().timeval();
+	Timestamp newer = calculateTimeval(ms);
+	const Timestamp & old = pair->value.expiry->expiry();
 	if (old < newer) pair->value.expiry->schedule_at(newer);
 }
 
 void AODVNeighbours::updateLifetime(NeighbourMap::Pair* pair){
-	const struct timeval & newer = calculateTimeval(calculateLifetime(-1)); // use existing code
-	const struct timeval & old = pair->value.expiry->expiry().timeval();
+	Timestamp newer = calculateTimeval(calculateLifetime(-1)); // use existing code
+	const Timestamp & old = pair->value.expiry->expiry();
 	pair->value.valid = true;
 	if (old < newer) pair->value.expiry->schedule_at(newer);
 }
@@ -225,10 +225,9 @@ const IPAddress & AODVNeighbours::getMyIP() const{
 uint32_t AODVNeighbours::getLifetime(const IPAddress & ip) const{
 	NeighbourMap::Pair* pair = neighbours.find_pair(ip);
 	assert(pair);
-	struct timeval expiry = pair->value.expiry->expiry().timeval();
-	struct timeval now;
-	click_gettimeofday(&now);
-	uint32_t result = (expiry.tv_sec - now.tv_sec) * 1000 + (expiry.tv_usec - now.tv_usec) / 1000;
+	const Timestamp & expiry = pair->value.expiry->expiry();
+	Timestamp now = Timestamp::now();
+	uint32_t result = (expiry - now).msecval();
 	return (result == 0)?1:result; // avoid returning 0 to avoid confusion: this entry is still valid!
 }
 
@@ -272,13 +271,6 @@ bool AODVNeighbours::largerSequenceNumber(uint32_t first, uint32_t second){
 	int32_t signedFirst = static_cast<int32_t>(first);
 	int32_t signedSecond = static_cast<int32_t>(second);
 	return signedFirst > signedSecond;
-}
-
-timeval AODVNeighbours::calculateTimeval(int ms){
-	struct timeval lifetimestruct;
-	click_gettimeofday(&lifetimestruct);
-	
-	return lifetimestruct += make_timeval(ms / 1000, (ms % 1000) * 1000);
 }
 
 // macro magic to use bighashmap
