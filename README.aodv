@@ -1,11 +1,14 @@
+This AODV implementation is a result of a Master thesis by Bart Braem. Information on the thesis and the inner workings can be found at http://www.pats.ua.ac.be/bart.braem
+We encourage the submission of patches for this work.
+
 Errors to fix
 --------------
 
 precursors are added for destination instead of source
 some of this could clearly use memory debugging, valgrind is your friend
+the routing table could probably be done better
 
-To do
+Contributors
 -----
-
-clean warnings: remove the use of gettimeofday
-replace the use of cp_va_parse by cp_va_kparse
+Eddie Kohler: better timeval use and replace the use of cp_va_parse by cp_va_kparse
+Johan Bergs, Kurt Smolderen and Gert Oorts: a lot of fixes to smaller problems, by testing this implementation a lot
