@@ -1,4 +1,7 @@
-This AODV implementation is a result of a Master thesis by Bart Braem. Information on the thesis and the inner workings can be found at http://www.pats.ua.ac.be/bart.braem
+This AODV implementation is a result of a Master thesis by Bart Braem, titled <a href="http://euterpe.cmi.ua.ac.be/~bbraem/thesis/thesis.pdf">"Implementatie en evaluatie van ad-hoc on-demand distance vector routing" (Implementation and evaluation of ad-hoc distance vector routing)</a>. The thesis is based on a comprehensive study and implementation of the ad-hoc routing protocol AODV in Click Modular Router.<br/>
+
+The complete latex source is <a href="http://euterpe.cmi.ua.ac.be/~bbraem/thesis/tekst.tar.bz2">available</a>, including the <a href="http://euterpe.cmi.ua.ac.be/~bbraem/thesis/thesis.cls">the stylesheet</a>. The final thesis presentation is available in <a href="http://euterpe.cmi.ua.ac.be/~bbraem/thesis/presentatie.pdf">PDF</a> and in <a href="http://euterpe.cmi.ua.ac.be/~bbraem/thesis/presentatie.tex">latex beamer format</a>. 
+
 We encourage the submission of patches for this work.
 
 Errors to fix
